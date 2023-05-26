@@ -126,6 +126,11 @@
       } // Prevent form submission and reloading
       uploadForm.addEventListener("submit", function (event) {
         event.preventDefault();
+      }); // Clear input value when Enter key is pressed
+      nameInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          nameInput.value = "";
+        }
       });
     </script>
   </body>
