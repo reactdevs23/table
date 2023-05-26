@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Statistics</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nameImageUploader">
+        <img id="image-preview" class="preview-image" src="#" alt="" />
+
+        <p id="name-display"></p>
+        <form class="formContainer" id="upload-form">
+          <div class="inputContainer">
+            <label for="name" class="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="input"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <label for="image" class="uploadImageLabel">Upload Image</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            class="uploadImage"
+            accept="image/*"
+          />
+        </form>
+      </div>
+
+      <div>
+        <h1 class="wallet-address">
+          Wallet Address: <span>YOUR WALLET ADDRESS</span>
+        </h1>
+        <div class="table">
+          <h2 class="title">Referral Statistics</h2>
+          <p class="row">
+            <span class="key">Level 1 Referral Count</span>
+            <span class="value">5</span>
+          </p>
+          <p class="row">
+            <span class="key">Level 2 Referral Count</span>
+            <span class="value">3</span>
+          </p>
+          <p class="row">
+            <span class="key">Level 1 Referral Earning</span>
+            <span class="value">5000</span>
+          </p>
+          <p class="row">
+            <span class="key">Level 2 Referral Earning</span>
+            <td class="value">3000</td>
+          </p>
+          <p class="row">
+            <span class="key">Total Earning</span>
+            <span class="value">8000</span>
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2 class="title">My Referrals</h2>
+        <div class="addressContainer">
+          <p class="address">
+            <span class="addressValue"
+              >0x80BCf591171f1e9ad5A67791592457f4b9A8771E
+            </span>
+            <span class="text"> - Level 1</span>
+          </p>
+          <p class="address">
+            <span class="addressValue"
+              >0x80BCf591171f1e9ad5A67791592457f4b9A8771E
+            </span>
+            <span class="text"> - Level 2</span>
+          </p>
+          <p class="address">
+            <span class="addressValue"
+              >0x80BCf591171f1e9ad5A67791592457f4b9A8771E
+            </span>
+            <span class="text"> - Level 1</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get references to the input elements and preview area
+      const nameInput = document.getElementById("name");
+      const nameDisplay = document.getElementById("name-display");
+      const imageInput = document.getElementById("image");
+      const imagePreview = document.getElementById("image-preview");
+      const uploadForm = document.getElementById("upload-form");
+
+      // Add event listeners for name input change and image upload
+      nameInput.addEventListener("input", updateName);
+      imageInput.addEventListener("change", updateImagePreview);
+
+      // Function to update the displayed name
+      function updateName() {
+        const name = nameInput.value;
+        nameDisplay.textContent = name;
+
+        if (name.length > 0) {
+          nameDisplay.style.display = "block"; // Show the name display
+        } else {
+          nameDisplay.style.display = "none"; // Hide the name display if no name is entered
+        }
+      }
+
+      // Function to update the image preview
+      function updateImagePreview(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            imagePreview.src = reader.result;
+            imagePreview.style.display = "inline-block"; // Show the image preview
+          };
+          reader.readAsDataURL(file);
+        } else {
+          imagePreview.style.display = "none"; // Hide the image preview if no file is selected
+        }
+      } // Prevent form submission and reloading
+      uploadForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #121619;
+  color: white;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: #121619;
+  border: 2px solid #18ed86;
+  padding: 20px;
+  padding-bottom: 20px;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-radius: 10px;
+}
+
+/* preview image */
+.nameImageUploader {
+  padding-top: 40px;
+}
+.formContainer {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+.preview-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: none;
+  margin: 0 auto;
+}
+#name-display {
+  font-size: 24px;
+  font-weight: 500;
+  display: none;
+  padding: 18px 0;
+  padding-bottom: 30px;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+.name {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 600;
+}
+.input {
+  font-family: "Inter";
+  color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  padding: 10px 10px;
+  background: transparent;
+  border-radius: 5px;
+  width: 100%;
+}
+.uploadImageLabel {
+  font-size: 14px;
+  font-weight: 600;
+  background: #18ed86;
+  color: #121619;
+  border-radius: 5px;
+  padding: 8px 15px;
+  width: 100%;
+}
+.uploadImage {
+  display: none;
+}
+.wallet-address {
+  font-size: 22px;
+  padding-bottom: 18px;
+  word-break: break-all;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+.title {
+  background-color: #18ed86;
+  color: #121619;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  padding: 12px;
+
+  border-radius: 8px 8px 0 0;
+}
+.key {
+  text-align: left;
+}
+.value {
+  text-align: right;
+}
+
+.addressContainer {
+  list-style-type: none;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.address {
+  text-align: center;
+  font-size: 16px;
+
+  padding: 16px 12px;
+}
+.addressValue {
+  word-break: break-all;
+  text-align: center;
+}
+.text {
+  white-space: nowrap;
+}
+.row:nth-child(odd) {
+  background: rgba(214, 237, 255, 0.1);
+}
+.address:nth-child(odd) {
+  background: rgba(214, 237, 255, 0.1);
+}
+
+@media only screen and (max-width: 575px) {
+  .container {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    padding: 10px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .wallet-address {
+    font-size: 20px;
+  }
+  .row,
+  .address {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+  .referel {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+  .addressContainer {
+    gap: 5px;
+  }
+  .address {
+    font-size: 14px;
+  }
+}
