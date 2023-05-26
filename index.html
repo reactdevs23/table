@@ -7,7 +7,12 @@
   <body>
     <div class="container">
       <div class="nameImageUploader">
-        <img id="image-preview" class="preview-image" src="#" alt="" />
+        <img
+          id="image-preview"
+          class="preview-image"
+          src="/profile.webp"
+          alt=""
+        />
 
         <p id="name-display"></p>
         <form class="formContainer" id="upload-form">
@@ -117,7 +122,6 @@
           const reader = new FileReader();
           reader.onload = function () {
             imagePreview.src = reader.result;
-            imagePreview.style.display = "inline-block"; // Show the image preview
           };
           reader.readAsDataURL(file);
         } else {

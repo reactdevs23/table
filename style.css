@@ -59,7 +59,7 @@ p {
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  display: none;
+
   margin: 0 auto;
 }
 #name-display {
