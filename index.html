@@ -35,6 +35,7 @@
             class="uploadImage"
             accept="image/*"
           />
+          <input type="submit" class="submitButton" value="Submit" />
         </form>
       </div>
 
@@ -124,13 +125,35 @@
             imagePreview.src = reader.result;
           };
           reader.readAsDataURL(file);
+          imagePreview.style.display = "block"; // Show the image preview
         } else {
           imagePreview.style.display = "none"; // Hide the image preview if no file is selected
         }
-      } // Prevent form submission and reloading
+      }
+
+      // Handle form submission
       uploadForm.addEventListener("submit", function (event) {
         event.preventDefault();
-      }); // Clear input value when Enter key is pressed
+
+        // Get the entered name and display it
+        const name = nameInput.value;
+        nameDisplay.textContent = name;
+
+        // Get the selected image file and display it as the preview
+        const file = imageInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            imagePreview.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+          imagePreview.style.display = "block"; // Show the image preview
+        } else {
+          imagePreview.style.display = "none"; // Hide the image preview if no file is selected
+        }
+      });
+
+      // Clear input value when Enter key is pressed
       nameInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
           nameInput.value = "";

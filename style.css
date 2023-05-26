@@ -99,9 +99,22 @@ p {
   border-radius: 5px;
   padding: 8px 15px;
   width: 100%;
+  cursor: pointer;
 }
 .uploadImage {
   display: none;
+}
+.submitButton {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: #18ed86;
+  color: #121619;
+  border-radius: 5px;
+  padding: 8px 15px;
+  width: 100%;
+  cursor: pointer;
 }
 .wallet-address {
   font-size: 22px;
